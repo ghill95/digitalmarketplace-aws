@@ -1,7 +1,9 @@
 {% extends "_base.j2" %}
 
 {% block extra %}
-    buildpack: python_buildpack
+    command: uwsgi --ini /home/vcap/app/uwsgi.conf --master
+    buildpacks:
+      - python_buildpack
 {% endblock %}
 
 {% block env %}
